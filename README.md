@@ -58,7 +58,8 @@ To show the pages containing a certain label hierarchy on the main blog page, th
 
 ```
 
-### Options
-- taxa: The taxonomies that are used to define the parent/child relationship.
-- sorting: The tree can be sorted by page count or label name and both desc and asc.
+### Todo
+- Optimize caching and automatic invalidation of cache when any page containing labels changes. Currently cache is not invalidated when a page is updated.
+- Sorting of tree in sidebar.
+- Add stylesheet for label tree
 
