@@ -1,39 +1,16 @@
-{#
- # Prints hierarchy of labels
- #
- # @param array taxa Array of labels the user is interested in, eg. ['category', 'tag']
- # @param string url The url a leaf node (label) refers to
- # @param object Grav::uri
- # @param boolean isParentSelected Is the parent node's parameter in url
- #}
-{% macro recurseTree(tree, labels) %}
+{% macro recurseTree(tree, labels, blog) %}
 <ul>
     {% for label in tree.children %}
-        <li><a href={{base_url~'/site-blog'}}/labels:{{ labels == '' ? label.name : labels~','~label.name }}>{{ label.name }}</a>
+        <li><a href={{blog.url}}/labels:{{ labels == '' ? label.name : labels~','~label.name }}>{{ label.name }}</a>
             {% if label.children %}
-               {{ _self.recurseTree(label, labels == '' ? label.name : labels~','~label.name)}}
+               {{ _self.recurseTree(label, labels == '' ? label.name : labels~','~label.name, blog)}}
             {% endif %}
         </li>
     {% endfor %}
 </ul>
 {% endmacro %}
 
-{#
- # Get hierarchy of labels found together on pages
- #
- # @param array taxa List of labels the user is interested in, eg. ['category', 'tag']
- # @param string sorting string Sorting of array eg. 'count|desc'
- # @return array A nested array like
- # [
-     parameter: 'category',
-     pageCount: 2,
-     subTaxa => [
-         paramter: 'tag'
-         ...
-         ]
-    ]
- #}
 {% set labelTree = labeltree.getLabelTree() %}
 {% if count(labelTree.children) > 0 %}
-    {{ _self.recurseTree(labelTree, '') }}
+    {{ _self.recurseTree(labelTree, '', blog) }}
 {% endif %}
