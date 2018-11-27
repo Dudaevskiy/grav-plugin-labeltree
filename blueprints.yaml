@@ -1,0 +1,27 @@
+name: Label Tree
+version: 0.1.0
+description: Creates tree of taxonomies found together on pages of blog
+icon: plug
+author:
+  name: pamtbaau
+  email: pamtbaau@gmail.com
+homepage: https://github.com/pamtbaau/grav-plugin-labeltree
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/pamtbaau/grav-plugin-labeltree/issues
+docs: https://github.com/pamtbaau/grav-plugin-labeltree/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
