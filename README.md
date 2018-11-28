@@ -32,9 +32,9 @@ In the header of a page, a hierarchy of labels can be assigned. For example:
 ```
 ---
 labels:
-    - Label-1
+    - Label-1:
         - Label-11
-    - Label-2
+    - Label-2:
         - Label-22
 ---
 ```
