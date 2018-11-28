@@ -51,7 +51,7 @@ To show the label tree in the sidebar of the blog page, the following could be a
 {% endif %}
 ```
 
-To show the pages containing a certain label hierarchy on the main blog page, the following should be changed in 'blog.html.twig' in theme Quark:
+To filter the pages based on the selected label hierarchy, the following should be changed in 'blog.html.twig' in theme Quark:
 ```
 {% set collection = page.collection() %}
    - replace by -
