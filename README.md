@@ -28,12 +28,13 @@ Note that if you use the admin plugin, a file with your configuration, and named
 
 ## Usage
 
-In the header of a page, a hierarchy of labels can be assigned. For example:
+In the header of a page, a hierarchy of labels can be assigned. The nesting of labels is unlimited. For example:
 ```
 ---
 labels:
     - Label-1:
-        - Label-11
+        - Label-11:
+           - Label-111 ... etc.
     - Label-2:
         - Label-22
 ---
