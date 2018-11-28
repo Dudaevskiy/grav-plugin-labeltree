@@ -56,7 +56,6 @@ To filter the pages based on the selected label hierarchy, the following should 
 {% set collection = page.collection() %}
    - replace by -
 {% set collection = labeltree.getPages(uri.param('labels')) %}
-
 ```
 
 ### Todo
