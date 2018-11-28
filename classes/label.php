@@ -10,15 +10,15 @@ class Label
     public $name = '';
     /** @var label[] */
     public $children = [];
-    /** @var array */
-    public $pages = [];
+    /** @var string[] */
+    public $pagePaths = [];
 
     public function __construct(string $name = '', Page $page = null)
     {
         $this->name = $name;
 
         if ($page) {
-            $this->pages[$page->path()] = ['slug' => $page->slug()];
+            $this->pagePaths[] = $page->path();
         }
      }
 }
