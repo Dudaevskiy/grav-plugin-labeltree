@@ -1,7 +1,7 @@
 {% macro recurseTree(tree, labels, blog) %}
 <ul>
     {% for label in tree.children %}
-        <li><a href={{blog.url}}/labels:{{ labels == '' ? label.name : labels~','~label.name }}>{{ label.name }}</a>
+        <li><a href="{{ blog.url }}/labels:{{ labels == '' ? label.name : labels~','~label.name }}">{{ label.name }}</a>
             {% if label.children %}
                {{ _self.recurseTree(label, labels == '' ? label.name : labels~','~label.name, blog)}}
             {% endif %}
